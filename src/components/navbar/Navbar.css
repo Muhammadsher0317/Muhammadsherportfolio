@@ -1,0 +1,302 @@
+nav {
+  background-color: rgba(10, 10, 10, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+nav {
+  background-color: rgba(10, 10, 10, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.nav-logo span {
+  color: var(--accent);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.links li a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.links li a:hover,
+.links li a.active {
+  color: white;
+}
+
+.links li a.active {
+  color: var(--accent);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbutti button {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+}
+
+.navbutti button:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* Default holatda mobil tugma yashirin turadi */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+  transform-origin: left;
+}
+
+/* --- Mobil Ekranlar uchun Stillar (768px dan kichik) --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Tugmani ko'rsatamiz */
+  }
+
+  /* Menu bosilganda X holatiga kelishi uchun animatsiya */
+  .menu-toggle.open span:first-child {
+    transform: rotate(45deg);
+    background-color: var(--accent);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open span:last-child {
+    transform: rotate(-45deg);
+    background-color: var(--accent);
+  }
+
+  /* Linklar ro'yxatini tepadan tushadigan panelga aylantiramiz */
+  .links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.98);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 0;
+    padding: 20px 0;
+    transform: translateY(-150%); /* Yashirib turish */
+    transition: transform 0.4s ease;
+    z-index: 99;
+  }
+
+  /* Menyu ochilganda pastga tushadi */
+  .links.active {
+    transform: translateY(0);
+  }
+
+  .links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .links li a {
+    display: block;
+    padding: 15px 0;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .navbutti button {
+    padding: 6px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.nav-logo span {
+  color: var(--accent);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.links li a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  font-weight: 400;
+}
+
+.links li a:hover,
+.links li a.active {
+  color: white;
+}
+
+.links li a.active {
+  color: var(--accent);
+}
+
+.navbutti button {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s;
+  letter-spacing: 1px;
+}
+
+.navbutti button:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .links {
+    gap: 15px;
+  }
+  .links li a {
+    font-size: 0.8rem;
+  }
+  .navbutti button {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+  }
+}
+
+/* --- Mobil Ekranlar uchun Stillar (768px dan kichik) --- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Hamburger tugmani ko'rsatish */
+  }
+
+  /* X holatiga kelish animatsiyasi */
+  .menu-toggle.open span:first-child {
+    transform: rotate(45deg);
+    background-color: var(--accent);
+  }
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open span:last-child {
+    transform: rotate(-45deg);
+    background-color: var(--accent);
+  }
+
+  /* O'ng tarafda kichkina bo'lib turadigan chiroyli dropdown panel */
+  .links {
+    position: absolute;
+    top: 65px; /* Navbardan biroz pastroqda */
+    right: 20px; /* O'ng tarafdan joylashuvi */
+    left: auto; /* Chap tomonni yopamiz */
+    width: 200px; /* Kichkina va ixcham o'lcham */
+    background-color: rgba(15, 15, 15, 0.98);
+    border: 1px solid var(--border);
+    border-radius: 8px; /* Burchaklarini yumaloq qilish */
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+
+    /* Yaxshi effekt uchun yashirib turish */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: all 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Orqasiga soya berish */
+  }
+
+  /* Menyu faollashganda (Ochilganda) */
+  .links.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .links li {
+    width: 100%;
+  }
+
+  .links li a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    text-align: left; /* Ichidagi yozuvlarni chapga tekislash */
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Linklar orasiga ingichka chiziq */
+  }
+
+  /* Oxirgi linkning tagidagi chiziqni olib tashlash */
+  .links li:last-child a {
+    border-bottom: none;
+  }
+
+  .navbutti button {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+}

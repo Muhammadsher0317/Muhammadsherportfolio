@@ -1,0 +1,155 @@
+.contact-page { padding: 80px 0; }
+
+.page-hero { text-align: center; margin-bottom: 60px; }
+.page-sub { color: var(--accent); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 12px; }
+.page-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 16px; }
+.page-desc { color: var(--muted); max-width: 500px; margin: 0 auto; line-height: 1.7; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.telegram-block-wrap h2, .contact-info h2 {
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+}
+
+/* Yangi Katta Telegram Kartasi */
+.telegram-big-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  height: calc(100% - 40px); /* O'ng tomondagi elementlar bilan bir xil balandlikda turishi uchun */
+  min-height: 350px;
+}
+
+.telegram-big-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 229, 255, 0.05);
+}
+
+.tg-icon-wrap {
+  width: 90px;
+  height: 90px;
+  background: rgba(0, 229, 255, 0.1);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+
+.telegram-big-card:hover .tg-icon-wrap {
+  background: var(--accent);
+}
+
+.tg-big-icon {
+  font-size: 2.5rem;
+  /* Agar loyihangizda emojilar o'rniga rang o'zgarishi kerak bo'lsa, bu yer qoladi */
+  display: inline-block;
+  transform: rotate(-15deg); 
+}
+
+.telegram-big-card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.telegram-big-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+  max-width: 280px;
+}
+
+.tg-action-btn {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.telegram-big-card:hover .tg-action-btn {
+  background: var(--accent);
+  color: #000;
+}
+
+/* Info */
+.info-cards { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+
+.info-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.3s;
+}
+.info-card:hover { border-color: rgba(0,229,255,0.4); }
+
+.info-icon { font-size: 1.4rem; }
+.info-label { color: var(--muted); font-size: 0.78rem; margin-bottom: 3px; letter-spacing: 1px; }
+.info-card div p, .info-card div a { font-size: 0.88rem; color: white; text-decoration: none; }
+.info-card div a:hover { color: var(--accent); }
+
+.map-placeholder {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,229,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,255,0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.map-inner {
+  position: relative;
+  background: rgba(0,229,255,0.1);
+  border: 1px solid var(--accent);
+  padding: 12px 24px;
+  border-radius: 4px;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .telegram-big-card { min-height: 300px; height: auto; }
+}
